@@ -16,5 +16,5 @@ $data = $userService->loadData([1,2]);
 
 foreach ($data as $user_id => $name) {
     // escape string here
-    echo "<a href=\"/show_user.php?id=$user_id\">$name</a>";
+    echo '<a href=\"/show_user.php?id='. htmlspecialchars($user_id).'">' . htmlspecialchars($name) . '</a>';
 }
