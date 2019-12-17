@@ -28,8 +28,8 @@ class UserService {
         $statement = $this->pdo->prepare($sql);
         $statement->execute($userIds);
         $data = [];
-        while ($obj = $statement->fetchObject()) {
-            $data[$obj->id] = $obj->name;
+        while ($row = $statement->fetch()) {
+            $data[$row['id']] = $row['name'];
         }
         return $data;
     }
